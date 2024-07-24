@@ -1,0 +1,20 @@
+const API_KEY = "ece9dfef";
+const movieList = [];
+
+async function fetchMovie(title) {
+    return await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`)
+        .then(res => res.json())
+        .then(res => JSON.parse(res));
+}
+
+export async function addMovie(title) {
+    await fetchMovie(title)
+        .then(movie => movieList.push(movie));
+    return movieList;
+}
+
+export function removeMovie(title) {
+    const movieIndex = movieList.findIndex(movie => movie.Title === title);
+    if(movieIndex > -1) movieList.splice(movieIndex, 1);
+    return movieList;
+}
