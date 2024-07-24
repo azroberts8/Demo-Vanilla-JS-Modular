@@ -5,9 +5,12 @@ async function fetchMovie(title) {
     return await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`, {
         method: "GET",
         redirect: "follow",
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://azroberts8.github.io'
+            'Access-Control-Allow-Origin': 'https://azroberts8.github.io',
+            'Access-Control-Request-Method': 'GET',
+            'Access-Control-Allow-Methods': 'GET'
         }
     })
         .then(res => console.log(res))
