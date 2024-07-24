@@ -2,7 +2,7 @@ const API_KEY = "ece9dfef";
 const movieList = [];
 
 async function fetchMovie(title) {
-    return await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`)
+    return await fetch(`//www.omdbapi.com/?apikey=${API_KEY}&t=${title}`)
         .then(res => res.json())
         .then(res => JSON.parse(res));
 }
