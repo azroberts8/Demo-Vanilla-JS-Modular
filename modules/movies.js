@@ -4,7 +4,8 @@ const movieList = [];
 async function fetchMovie(title) {
     return await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`, {
         method: "GET",
-        redirect: "follow"
+        redirect: "follow",
+        headers: {"origin": "https://www.omdbapi.com"}
     })
         .then(res => console.log(res))
         .then(res => res.json())
