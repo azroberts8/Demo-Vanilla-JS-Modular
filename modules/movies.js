@@ -5,7 +5,7 @@ async function fetchMovie(title) {
     return await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`, {
         mode: 'cors',
         headers: {
-          'Access-Control-Allow-Origin':'*'
+          'Access-Control-Allow-Origin':'https://azroberts8.github.io'
         }
     })
         .then(res => res.json())
