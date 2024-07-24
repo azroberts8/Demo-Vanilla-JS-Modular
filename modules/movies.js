@@ -2,7 +2,7 @@ const API_KEY = "ece9dfef";
 const movieList = [];
 
 async function fetchMovie(title) {
-    return await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`, {
+    return await fetch(`https://cors-anywhere.herokuapp.com/https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`, {
         method: "GET",
         redirect: "follow"
     })
