@@ -4,7 +4,8 @@ const movieList = [];
 async function fetchMovie(title) {
     return await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`)
         .then(res => res.json())
-        .then(res => JSON.parse(res));
+        .then(res => JSON.parse(res))
+        .catch(e => console.log(e));
 }
 
 export async function addMovie(title) {
